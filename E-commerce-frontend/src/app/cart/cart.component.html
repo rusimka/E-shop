@@ -1,0 +1,39 @@
+<div class="cart-container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let product of products| async ">
+      <td>{{product.productName}}</td>
+      <td>{{product.price}}</td>
+      <td>
+        <input type="number" name="quantity"  min="1" max="{{product.quantity}}"
+                   [(ngModel)]="product.quantity" />
+        <button type="submit" class="btn btn-success" #updateQuantityButton (click)="calculateTotalPrice()">Update</button>
+      </td>
+
+      <td>{{product.quantity * product.price}}</td>
+      <td>
+        <button type="submit" class="btn btn-danger" (click)="removeProduct(product.id)">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <p>Total sum: {{total}}</p>
+
+</div>
+
+
+<!--[required]="product.quantity"-->
+
+<!--(click)="updateQuantity(product.price,product.quantity)-->

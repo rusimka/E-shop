@@ -1,0 +1,56 @@
+<div class="container">
+  <div id="form" style="width: 400px">
+
+    <form (ngSubmit)="onSubmit()" >
+
+      <div class="form-group" [formGroup]="productForm">
+        <label for="productName">Product name: </label>
+        <input type = text  class="form-control" id="productName" name="productName"  formControlName="productName" required [(ngModel)]="product.productName">
+        <p style="color:red" *ngIf="!productForm.controls.productName.valid && !submitted">Product name is required</p>
+
+      </div>
+
+
+      <div class="form-group" [formGroup]="productForm">
+        <label for="description">Description: </label>
+        <input type = text  class="form-control" id="description" name="description" formControlName="description"  required [(ngModel)]="product.description">
+<!--        required [(ngModel)]="product.description" - this was in the input but it is not supported
+            submitted without ! - it will show the validation message after clicking on submit
+-->
+        <p style="color: red" *ngIf="!productForm.controls.description.valid && !submitted">Description is required</p>
+      </div>
+
+
+      <div class="form-group" [formGroup]="productForm">
+        <label for="quantity">Quantity: </label>
+        <input type = text  class="form-control" id="quantity" name="quantity" formControlName="quantity" required [(ngModel)]="product.quantity" >
+        <p style="color: red" *ngIf="!productForm.controls.quantity.valid && !submitted">Quantity is required</p>
+      </div>
+
+      <div class="form-group" [formGroup]="productForm">
+        <label for="price">Price: </label>
+        <input type = text  class="form-control" id="price" name="price" formControlName="price" required [(ngModel)]="product.price" >
+        <p style="color: red" *ngIf="!productForm.controls.price.valid && !submitted">Price is required</p>
+      </div>
+
+
+      <div class="form-group" [formGroup]="productForm">
+        <label for="image">Image: </label>
+        <input type = file  class="form-control" id="image" name="image" (change)="onFileChange($event)" formControlName="imageBase64" required [(ngModel)]="product.imageBase64">
+        <p style="color: red" *ngIf="!productForm.controls.imageBase64.valid && !submitted">Image is required</p>
+
+      </div>
+
+
+      <button type="submit" class=" btn btn-success"  [disabled]="!productForm.valid">Add new product</button>
+
+
+      <div>
+        <h2>New image: </h2>
+        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px">
+      </div>
+
+    </form>
+
+  </div>
+</div>

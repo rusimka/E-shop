@@ -1,0 +1,65 @@
+<div xmlns:ng-model-options="http://www.w3.org/1999/xhtml" style="display: flex">
+  <form>
+
+    <div style="width: 400px">
+      <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" class="form-control" id="productName" required [(ngModel)]="product.productName" name="productName">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" required [(ngModel)]="product.description" name="description">
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="text" class="form-control" id="quantity" required [(ngModel)]="product.quantity" name="quantity">
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
+      </div>
+
+      <!--    <div class="form-group">-->
+      <!--      <label for="myfile">No file choosen:</label>-->
+      <!--      <input type="file" id="myfile" required [(ngModel)]="product.imageBase64" name="myfile"><br><br>-->
+      <!--    </div>-->
+
+      <div class="form-group">
+        <label for="file">File</label>
+        <input
+          name="file"
+          id="file"
+          type="file"
+          class="form-control"
+          (change)="onFileChange($event)">
+      </div>
+
+      <button type="submit" class=" btn btn-success" (click)="onSubmit()">Submit</button>
+<!--      // (click) = "onSubmit()" -->
+
+    </div>
+
+
+    <div class="row">
+      <div class="column">
+        <h2>Original image: </h2>
+        <img src="{{product.imageBase64}}">
+      </div>
+
+      <div class="column">
+        <h2>New image: </h2>
+        <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px">
+      </div>
+    </div>
+
+
+
+
+
+
+  </form>
+
+</div>

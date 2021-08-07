@@ -1,0 +1,22 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" id="add-new-product" (click)="addNewProduct()">Add new product</button>
+
+  <div class="threeGrid">
+
+    <div *ngFor="let product of products | async"
+          class="border border-info">
+      <p class="productName"><b>{{product.productName}}</b></p>
+      <img src="{{product.imageBase64}}" class="imgStyle">
+      <p class="detailsForProduct">{{product.description}}</p>
+      <p class="detailsForProduct">Price: {{product.price}}</p>
+      <p class="detailsForProduct">Quantity: {{product.quantity}}</p>
+      <button type="button" class="btn btn-secondary buttons" (click)="productUpdate(product.id)">Edit</button>
+      <button type="button" class="btn btn-danger buttons" (click)="openConfirmationDialog(product.id)">Remove</button>
+
+
+
+    </div>
+
+  </div>
+
+</div>

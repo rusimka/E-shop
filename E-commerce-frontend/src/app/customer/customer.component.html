@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div class="threeGrid">
+
+    <div *ngFor="let product of products | async"
+         class="border border-info">
+      <p class="productName"><b>{{product.productName}}</b></p>
+      <img src="{{product.imageBase64}}" class="imgStyle">
+      <p class="detailsForProduct">{{product.description}}</p>
+      <p class="detailsForProduct">Price: {{product.price}}</p>
+      <p class="detailsForProduct">Quantity: {{product.quantity}}</p>
+      <button href="/cart" class="btn btn-primary buttons" (click)="onSubmit(product.id)">Add to cart</button>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>

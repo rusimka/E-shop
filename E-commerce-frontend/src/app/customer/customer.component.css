@@ -1,0 +1,24 @@
+.threeGrid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
+}
+.productName {
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.imgStyle {
+  margin-left: 20px;
+}
+
+.buttons {
+  margin-left: 10px;
+  margin-right: 60px;
+}
+.detailsForProduct {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+

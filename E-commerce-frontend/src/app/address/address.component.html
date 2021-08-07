@@ -1,0 +1,32 @@
+<div>
+  <form>
+    <div class="form-group">
+      <label for="addressName">Address name</label>
+      <input type="text" class="form-control" id="addressName" *ngIf="address" required [(ngModel)]="address.addressName" name="addressName">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" required [(ngModel)]="address.city" name="city">
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input type="text" class="form-control" id="state" required [(ngModel)]="address.state" name="state">
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" class="form-control" id="country" required [(ngModel)]="address.country"  name="country">
+    </div>
+    <div class="form-group">
+      <label for="zipCode">Zipcode</label>
+      <input type="text" class="form-control" id="zipCode" required [(ngModel)]="address.zipCode"  name="zipCode">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="phone" class="form-control" id="phone"  required [(ngModel)]="address.phone" name="phone">
+    </div>
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">Update address</button>
+  </form>
+</div>
+
+
+<!--required [(ngModel)]="address.city"-->

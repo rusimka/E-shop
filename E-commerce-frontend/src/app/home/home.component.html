@@ -1,0 +1,33 @@
+<!--<div class="container">-->
+<!--  <a *ngIf="this.customer=='ROLE_ADMIN'" href="/add" class="btn btn-primary">Add new product</a>-->
+<!--  <div class="jumbotron mt-2">-->
+<!--    <div class="row">-->
+<!--      <app-products-list *ngFor="let product of products" id="product.id" productName="product.productName"-->
+<!--                   description="product.description" quantity="product.quantity" price="product.price"-->
+<!--                             imageBase64="product.imageBase64" class="col-md-4">-->
+<!--      </app-products-list>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container" *ngIf="customer=='ROLE_CUSTOMER'">
+
+  <app-customer>
+
+  </app-customer>
+
+</div>
+
+<div class="container" *ngIf="admin=='ROLE_ADMIN'">
+
+  <div class="jumbotron mt-2">
+        <div class="row" class="col-md-4">
+          <app-products-list >
+          </app-products-list>
+        </div>
+  </div>
+
+</div>
+
+
+
